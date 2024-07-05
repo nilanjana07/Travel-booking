@@ -41,7 +41,7 @@ exports.login = async (req, res) => {
     jwt.sign(payload, keys.jwtSecret, { expiresIn: '1h' }, (err, token) => {
       if (err) throw err;
       // Return a customized welcome message along with the token
-      res.json({ message: `Welcome ${user.name} to travel-bookings`, token });
+      res.json({ message: `Welcome ${user.name} to Travel-bookings`, token });
     });
   } catch (error) {
     res.status(500).json({ message: 'Server error' });
